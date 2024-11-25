@@ -1,0 +1,84 @@
+<body>
+    <!-- Back to Home Page Button -->
+    <div class="back-home-container" style="text-align: center; margin: 20px;">
+        <a href="index.html" class="back-home-button" style="
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #e60000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        ">
+            <span class="icon" style="margin-right: 8px;">🏠</span> Back to Home Page
+        </a>
+    </div>
+</body>
+<!-- Contact Us Section -->
+<section id="contact-us" style="padding: 50px 0; background: url('contact us.jpg') no-repeat center center/cover; background-color: #f3f3f3;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center; font-size: 2.5em; color: #333; margin-bottom: 30px;">Contact Us</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+
+            <!-- Contact Form -->
+            <div class="contact-form" style="flex: 1; min-width: 300px; background-color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <h3 style="font-size: 1.8em; margin-bottom: 20px; color: #7CFC00;">Get in Touch</h3>
+                <form action="#" method="POST">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em; transition: border 0.3s;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em; transition: border 0.3s;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <textarea name="message" rows="5" placeholder="Your Message" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em; transition: border 0.3s;"></textarea>
+                    </div>
+                    <button type="submit" style="padding: 10px 20px; background-color: #7CFC00; color: #fff; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s;">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-details" style="flex: 1; min-width: 300px; background-color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <h3 style="font-size: 1.8em; margin-bottom: 20px; color: #7CFC00;">Visit Us</h3>
+                <p style="font-size: 1em; color: #666;">456 Gallery Street, Artisan District, Creative City</p>
+                <p style="font-size: 1em; color: #666;">Call us: +987 654 321</p>
+                <p style="font-size: 1em; color: #666;">Email: contact@thegallerycafe.com</p>
+                <h3 style="font-size: 1.8em; margin-top: 30px; margin-bottom: 20px; color: #7CFC00;">Opening Hours</h3>
+                <p style="font-size: 1em; color: #666;">Monday - Thursday: 8:00 AM - 10:00 PM</p>
+                <p style="font-size: 1em; color: #666;">Friday: 8:00 AM - 11:00 PM</p>
+                <p style="font-size: 1em; color: #666;">Saturday - Sunday: Closed</p>
+            </div>
+
+            <!-- Embedded Map -->
+            <div class="map" style="flex: 1; min-width: 300px; background-color: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509619!2d144.95373631537742!3d-37.8162793797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5774c324888978!2s123%20Lavender%20Lane%2C%20Melbourne%20VIC%203001%2C%20Australia!5e0!3m2!1sen!2sus!4v1602917237165!5m2!1sen!2sus" 
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and card animations
+        document.querySelectorAll('.contact-form, .contact-details, .map').forEach(card => {
+            card.addEventListener('mouseover', function() {
+                card.style.transform = 'scale(1.05)';
+                card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+            });
+
+            card.addEventListener('mouseout', function() {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+            });
+        });
+
+        document.querySelector('.contact-form form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message. We will get back to you shortly.');
+        });
+    </script>
+</section>

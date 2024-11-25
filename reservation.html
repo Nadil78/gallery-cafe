@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Reservation</title>
+    <body>
+        <!-- Back to Home Page Button -->
+        <div class="back-home-container" style="text-align: center; margin: 20px;">
+            <a href="index.html" class="back-home-button" style="
+                display: inline-block;
+                padding: 10px 20px;
+                color: #fff;
+                background-color: #e60000;
+                text-decoration: none;
+                border-radius: 5px;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            ">
+                <span class="icon" style="margin-right: 8px;">🏠</span> Back to Home Page
+            </a>
+        </div>
+    </body>
+    <style>
+
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/About Us/reservation.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        .reservation-container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .reservation-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #7CFC00;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #7CFC00;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            padding: 8px;
+        }
+
+        .btn-reserve {
+            background-color: #7CFC00;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn-reserve:hover {
+            background-color: #7CFC00;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: green;
+            font-size: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="reservation-container">
+    <form class="reservation-form" id="reservationForm">
+        <h2>Reserve a Table</h2>
+        
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Reservation Date:</label>
+            <input type="date" id="date" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="time">Reservation Time:</label>
+            <input type="time" id="time" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="guests">Number of Guests:</label>
+            <select id="guests" required>
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5 People</option>
+                <option value="6+">6+ People</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-reserve">Reserve Now</button>
+        <p class="message" id="confirmationMessage"></p>
+    </form>
+</div>
+
+<script>
+    document.getElementById("reservationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const guests = document.getElementById("guests").value;
+
+        if (name && email && date && time && guests) {
+            document.getElementById("confirmationMessage").textContent = `Reservation Confirmed for ${name} on ${date} at ${time} for ${guests}.`;
+        } else {
+            document.getElementById("confirmationMessage").textContent = "Please fill in all fields.";
+        }
+    });
+</script>
+
+</body>
+</html>

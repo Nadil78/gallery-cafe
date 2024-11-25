@@ -1,0 +1,66 @@
+<!-- Admin and Staff Login Page -->
+<section id="login-section" style="display: flex; justify-content: center; align-items: center; height: 100vh; background: url('login.jpg') no-repeat center center/cover;">
+    <div class="login-container" style="background-color: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); width: 350px; text-align: center;">
+        <h2 style="color: #7CFC00; font-size: 2em; margin-bottom: 20px;">Login</h2>
+        <form action="#" method="POST">
+            <div style="margin-bottom: 15px;">
+                <input type="text" name="username" placeholder="Username" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="password" name="password" placeholder="Password" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <select name="role" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em;">
+                    <option value="">Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="staff">Staff</option>
+                </select>
+            </div>
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #7CFC00; color: #fff; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer;">Login</button>
+        </form>
+        <p style="margin-top: 15px; color: #666;">Forgot your password? <a href="#" style="color: #7CFC00;">Click here</a></p>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and redirection
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const role = document.querySelector('select[name="role"]').value;
+    
+            // Simulated user credentials
+            const validCredentials = {
+                admin: {
+                    username: "adminUser",
+                    password: "adminPass"
+                },
+                staff: {
+                    username: "staffUser",
+                    password: "staffPass"
+                }
+            };
+    
+            // Check for valid role and credentials
+            if (role === "admin") {
+                if (username === validCredentials.admin.username && password === validCredentials.admin.password) {
+                    // Redirect to the admin dashboard
+                    window.location.href = "admin dashboard.html"; 
+                } else {
+                    alert("Incorrect username or password for Admin.");
+                }
+            } else if (role === "staff") {
+                if (username === validCredentials.staff.username && password === validCredentials.staff.password) {
+                    // Redirect to the staff dashboard
+                    window.location.href = "staff dashboard.html"; 
+                } else {
+                    alert("Incorrect username or password for Staff.");
+                }
+            } else {
+                // If no role is selected, show an alert
+                alert("Please select a role.");
+            }
+        });
+    </script>
+    
+</section>
